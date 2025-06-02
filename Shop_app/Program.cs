@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Shop_app.Services;
+using System;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -87,7 +88,15 @@ namespace Shop_app
                 app.UseHsts();
             }
 
-            
+            //using (var scope = app.Services.CreateScope())
+            //{
+            //    var db = scope.ServiceProvider.GetRequiredService<ShopContext>();
+            //    db.Database.Migrate();
+            //    var db2 = scope.ServiceProvider.GetRequiredService<UserContext>();
+            //    db2.Database.Migrate();
+            //}
+
+
             app.UseRouting();
             app.UseHttpsRedirection();
 
